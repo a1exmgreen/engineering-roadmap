@@ -1,4 +1,6 @@
-/* Root */
+/* ========================================
+   1. Variables
+   ======================================== */
 :root {
     --ink-black: #111111;
     --bg-pill: #161a20;
@@ -7,9 +9,19 @@
     --cream: #F3EEE3;
     --text-muted: #b8c0cc;
     --live-green: #22c55e;
+    --light-green: #6ee7b7;
+    --light-grey: #6b6b6b;
+    --off-white: #f8f4ec;
 }
 
-/* Header */
+/* Box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* ========================================
+   2. Header
+   ======================================== */
 .site-header {
     background-color: var(--ink-black);
     color: var(--cream);
@@ -18,7 +30,7 @@
 }
 
 .header-inner {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -37,20 +49,19 @@
 }
 
 .tagline {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: Georgia, "Times New Roman", serif;
     font-size: 0.9rem;
     color: var(--accent-orange);
-    margin: 0.15rem 0 0;
+    margin: 0.2rem 0 0;
 }
 
-/* Verticle Divider */
 .header-divider {
     width: 1px;
     height: 36px;
     background-color: var(--border-subtle);
 }
 
-/* freeCodeCamp Tracker Pill */
+/* fCC Tracker Pill */
 .fcc-tracker {
     display: inline-flex;
     align-items: center;
@@ -59,7 +70,7 @@
     border: 1px solid var(--border-subtle);
     border-radius: 999px;
     padding: 0.4rem 0.65rem 0.4rem 0.85rem;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-family: ui-monospace, SFmono-Regular, Menlo, Monaco, Consolas, monospace;
     font-size: 0.88rem;
 }
 
@@ -73,14 +84,14 @@
 }
 
 .fcc-status-text {
-    color: #6ee7b7;
+    color: var(--light-green);
     white-space: nowrap;
 }
 
 .fcc-icon-btn {
-    background: rgba(200, 90, 40, 0.16);
+    background-color: rgba(217, 84, 30, 0.16);
     color: var(--accent-orange);
-    border: 1px solid rgba(200, 90, 40, 0.45);
+    border: 1px solid rgba(217, 84, 30, 0.5);
     border-radius: 50%;
     width: 26px;
     height: 26px;
@@ -89,11 +100,11 @@
     justify-content: center;
     cursor: pointer;
     font-size: 0.95rem;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .fcc-icon-btn:hover {
-    background: var(--accent-orange);
+    background-color: var(--accent-orange);
     color: var(--cream);
 }
 
@@ -126,9 +137,204 @@
     text-decoration: underline;
 }
 
-/* Responsive Tweaks */
-@media (max-width: 900px) {
+/* ========================================
+   3. Page Body & Roadmap Progress Header
+   ======================================== */
+   body {
+    margin: 0;
+    background-color: var(--cream);
+    color: var(--ink-black);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+   }
+
+   .page-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 3.5rem;
+   }
+
+   .section-progress-track {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(17, 17, 17, 0.15);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+   }
+
+   .section-progress-fill {
+    width: 60%;
+    height: 100%;
+    background-color: var(--accent-orange);
+   }
+
+   .section-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+   }
+
+   .section-header h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.75rem, 3vw, 2.35rem);
+    margin: 0;
+    color: var(--ink-black);
+   }
+
+   /* ========================================
+   4. 5-Step Phase Stepper
+   ======================================== */
+   .phase-stepper {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+   }
+
+   .step-pill {
+    background-color: var(--light-grey);
+    color: var(--cream);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.55rem 1.25rem;
+    border-radius: 999px;
+    text-align: center;
+   }
+
+   .step-pill.is-active {
+    background-color: var(--accent-orange);
+   }
+
+   .step-pill.is-current {
+    background-color: var(--ink-black);
+   }
+
+   /* ========================================
+   5. Phase Cards & Project Cards
+   ======================================== */
+   .phase-cards, .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+   }
+
+   .card {
+    background-color: var(--off-white);
+    border: 2px solid var(--ink-black);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+   }
+
+   .card-top-bar {
+    height: 8px;
+    background-color: var(--accent-orange);
+    flex-shrink: 0;
+   }
+
+   .card-body {
+    padding: 1.25rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+   }
+
+   .card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    margin: 0 0 1rem;
+    color: var(--ink-black);
+   }
+
+   .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.75rem;
+   }
+
+   .phase-card .checklist:last-of-type {
+    margin-bottom: 1.25rem;
+   }
+
+   .project-card .checklist:last-child {
+    margin-bottom: 0;
+   }
+
+   .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.95rem;
+    line-height: 1.35;
+   }
+
+   .check-badge {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--accent-orange);
+    color: var(--cream);
+    font-size: 0.78rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+   }
+
+   .pow-pill {
+    margin-top: auto;
+    background-color: var(--ink-black);
+    color: var(--cream);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+   }
+
+   /* ========================================
+   6. Projects Section Header
+   ======================================== */
+   .projects-section {
+    margin-top: 2.75rem;
+   }
+
+   .projects-top-row {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .projects-top-row h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.75rem, 3vm, 2.35rem);
+    margin: 0;
+    color: var(--ink-black);
+  }
+
+   @media (max-width: 960px) {
     .header-divider {
-        display: none;
+      display: none;
     }
-}
+  
+    .phase-cards,
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .projects-top-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+  }

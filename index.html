@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Career Roadmap</title>
         <link rel="stylesheet" href="style.css">
     </head>
@@ -18,10 +19,13 @@
 
                 <!--Live Tracker-->
                 <div class="fcc-tracker" aria-label="freeCodeCamp progress tracker">
+                    <!--Green Indicator showing active tracker status-->
                     <span class="status-dot" aria-hidden="true"></span>
-                    <span id="fcc-status-text" class="fcc-status-text">HTML5 → CSS3</span>
+                    <!--Displays the detected freeCodeCamp module-->
+                    <span id="fcc-status-text" class="fcc-status-text">fCC: Not linked yet</span>
+                    <!--Button to set/change fCC username and sync-->
                     <button type="button" id="fcc-sync-btn" class="fcc-icon-btn"
-                    title="Sync from freeCodeCamp username or update section" aria-label="Sync or update freeCodeCamp section">
+                    title="Set freeCodeCamp username and sync current module" aria-label="Sync or update freeCodeCamp section">
                         ↻
                     </button>
                 </div>
@@ -37,5 +41,188 @@
                 </nav>
             </div>
         </header>
+        <main class="page-main">
+            <!--Roadmap Section-->
+            <section id="roadmap" class="roadmap-section" aria-labelledby="roadmap-heading">
+                <!--Top Progress Bar-->
+                <div class="section-progress-track" aria-hidden="true">
+                    <div class="section-progress-fill"></div>
+                </div>
+
+                <!--Centered Section Heading-->
+                <div class="section-header">
+                    <h2 id="roadmap-heading">My Engineering Roadmap</h2>
+                </div>
+
+                <!--Horizontal 5-step Phase Pills-->
+                <ol class="phase-stepper" aria-label="Roadmap phases">
+                    <li class="step-pill is-current">1: Web Foundations</li>
+                    <li class="step-pill">2: JavaScript &amp; Logic</li>
+                    <li class="step-pill">3: Python &amp; FastAPI</li>
+                    <li class="step-pill">4: DevOps &amp; Switch Lab</li>
+                    <li class="step-pill">5: Capstone</li>
+                </ol>
+
+                <!--3-Column Roadmap Cards-->
+                <div class="phase-cards">
+                    <!--Phase 1 Card-->
+                    <article class="card phase-card">
+                        <div class="card-top-bar"></div>
+                        <div class="card-body">
+                            <h3>PHASE 1: Web Foundations</h3>
+                            <ul class="checklist">
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Complete HTML5 on freeCodeCamp</span>
+                                </li>
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Build Responsive Personal Portfolio</span>
+                                </li>
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Learn Git &amp; GitHub basic workflows</span>
+                                </li>
+                            </ul>
+                            <div class="pow-pill">Proof-of-Work: Project #1 (Portfolio)</div>
+                        </div>
+                    </article>
+
+                    <!--Phase 2 Card-->
+                    <article class="card phase-card">
+                        <div class="card-top-bar"></div>
+                        <div class="card-body">
+                            <h3>PHASE 2: JavaScript &amp; React</h3>
+                            <ul class="checklist">
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Learn JS variables, loops &amp; DOM</span>
+                                </li>
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Build Helpdesk Ticket Tracker</span>
+                                </li>
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Integrate Ticket API with logic</span>
+                                </li>
+                            </ul>
+                            <div class="pow-pill">Proof-of-Work: Project #2 (Ticket UI)</div>
+                        </div>
+                    </article>
+
+                    <!--Phase 3 Card-->
+                    <article class="card phase-card">
+                        <div class="card-top-bar"></div>
+                        <div class="card-body">
+                            <h3>PHASE 3: Python &amp;; FastAPI</h3>
+                            <ul class="checklist">
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Design Database Schema</span>
+                                </li>
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Build API endpoints with FastAPI</span>
+                                </li>
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Implement basic user auth</span>
+                                </li>
+                            </ul>
+                            <div class="pow-pill">Proof-of-Work: Project #3 (Inventory API)</div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!--Project Section-->
+            <section id="projects" class="projects-section" aria-labelledby="projects-heading">
+                <div class="projects-top-row">
+                    <h2 id="projects-heading">Software Builds</h2>
+                </div>
+
+                <div class="projects-grid">
+                    <!--Left: Task Manager-->
+                    <article class="card project-card">
+                        <div class="card-top-bar"></div>
+                        <div class="card-body">
+                            <h3>Task Manager</h3>
+                            <ul class="checklist">
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Notes and Checklist</span>
+                                </li>
+                            </ul>
+                            <ul class="checklist">
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Editable Tasks</span>
+                                </li>
+                            </ul>
+                            <ul class="checklist">
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Roadmap Integration</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!--Middle: Weather App-->
+                    <article class="card project-card">
+                        <div class="card-top-bar"></div>
+                        <div class="card-body">
+                            <h3>Weather App</h3>
+                            <ul class="checklist">
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>API Integration</span>
+                                </li>
+                            </ul>
+                            <ul class="checklist">
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Design &amp; Additional Features</span>
+                                </li>
+                            </ul>
+                            <ul class="checklist">
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Alerts &amp; Warnings</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!--Right: Portfolio-->
+                    <article class="card project-card">
+                        <div class="card-top-bar"></div>
+                        <div class="card-body">
+                            <h3>Personal Portfolio</h3>
+                            <ul class="checklist">
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Home Page &amp; Overall Design</span>
+                                </li>
+                            </ul>
+                            <ul class="checklist">
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Project &amp; Contact Pages</span>
+                                </li>
+                            </ul>
+                            <ul class="checklist">
+                                <li class="is-done">
+                                    <span class="check-badge" aria-hidden="true">✓</span>
+                                    <span>Publishing &amp; Security</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
     </body>
+    <script src="script.js"></script>
 </html>
